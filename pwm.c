@@ -18,7 +18,7 @@
 // -> DESCOMENTE a linha abaixo para ativar o modo LED (GPIO 12), recomendável para testes seguros.
 // -------------------------------------------------------------
 
-#define USE_LED // Descomente para usar o LED (GPIO12) e Comente para ativar o motor (GPIO22)
+//#define USE_LED // Descomente para usar o LED (GPIO12) e Comente para ativar o motor (GPIO22)
 
 #ifdef USE_LED
 #define PWM_PIN 12      // Pino do LED
