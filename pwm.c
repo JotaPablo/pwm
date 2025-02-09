@@ -1,9 +1,24 @@
+/*
+ * ATENÇÃO: Este código pode ser utilizado para controlar um servomotor ou um LED no GPIO 12.
+ * Se for rodar em um Raspberry Pi Pico real, NÃO conecte o servomotor diretamente ao GPIO 22 
+ * sem um circuito de interface adequado, pois isso pode danificar a placa.
+ * Para testes seguros, utilize a simulação no Wokwi ou ative o modo LED descomentando #define USE_LED.
+ */
+
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
 
-// Configuração para alternar entre motor e LED
-#define USE_LED // Descomente para usar o LED na BitDogLab (GPIO12)
+// -------------------------------------------------------------
+// ATENÇÃO: Se estiver usando hardware real, ative o modo LED descomentando a linha abaixo 
+// para evitar danos ao Raspberry Pi Pico. 
+//
+// Configuração para alternar entre o motor (GPIO 22) e o LED (GPIO 12).
+// -> COMENTE a linha abaixo para ativar o modo MOTOR (GPIO 22).
+// -> DESCOMENTE a linha abaixo para ativar o modo LED (GPIO 12), recomendável para testes seguros.
+// -------------------------------------------------------------
+
+#define USE_LED // Descomente para usar o LED (GPIO12) e comente para ativar o motor (GPIO22)
 
 #ifdef USE_LED
 #define PWM_PIN 12      // Pino do LED
@@ -28,13 +43,6 @@ void pwm_setup() {
     pwm_set_wrap(slice, WRAP_PERIOD);
     pwm_set_enabled(slice, true);
 }
-
-void set_servo_position(uint16_t pulse_width) {
-
-    pwm_set_gpio_level(PWM_PIN, pulse_width);
-}
-
-
 
 int main() {
     stdio_init_all();
