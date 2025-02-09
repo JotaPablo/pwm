@@ -18,7 +18,7 @@
 // -> DESCOMENTE a linha abaixo para ativar o modo LED (GPIO 12), recomendável para testes seguros.
 // -------------------------------------------------------------
 
-#define USE_LED // Descomente para usar o LED (GPIO12) e Comente para ativar o motor (GPIO22)
+//#define USE_LED // Descomente para usar o LED (GPIO12) e Comente para ativar o motor (GPIO22)
 
 #ifdef USE_LED
 #define PWM_PIN 12      // Pino do LED
@@ -27,9 +27,9 @@
 #endif
 
 // Valores de duty cycle em microssegundos conforme especificação
-#define DUTY_CYCLE_0   500   // 0 graus (0.025%)
-#define DUTY_CYCLE_90  1470  // 90 graus (0.0735%)
-#define DUTY_CYCLE_180 2400  // 180 graus (0.12%)
+#define DUTY_CYCLE_0   500   // 0 graus (2.5%)
+#define DUTY_CYCLE_90  1470  // 90 graus (7.35%)
+#define DUTY_CYCLE_180 2400  // 180 graus (12%)
 
 // Parâmetros de controle
 #define WRAP_PERIOD 20000 // 20ms para 50Hz
