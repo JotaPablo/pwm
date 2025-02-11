@@ -3,7 +3,7 @@
 Projeto desenvolvido para a Unidade 4 - Capítulo 7, demonstrando o uso de PWM (modulação por largura de pulso) para controle de periféricos, como servomotores e LEDs, na placa BitDogLab com RP2040.
 
 ## 🎥 Vídeo Demonstrativo
-[![Assista ao vídeo no YouTube](https://img.youtube.com/vi/DTxdqxYpCuU/hqdefault.jpg)](https://youtu.be/DTxdqxYpCuU)
+[![Assista ao vídeo no YouTube](https://img.youtube.com/vi/2Hz4zc6hip8/hqdefault.jpg)](https://youtu.be/2Hz4zc6hip8)
 
 ## Descrição
 Implementação de um sistema para controle de um servomotor ou LED, utilizando a modulação por largura de pulso (PWM). O código permite ajustar o ângulo de um servomotor ou controlar o brilho de um LED RGB de forma suave.
@@ -59,3 +59,5 @@ Implementação de um sistema para controle de um servomotor ou LED, utilizando 
    - **No simulador Wokwi (simulação):**
      - Se estiver executando o código no **simulador Wokwi**, **DEIXE a linha** `#define USE_LED` **DESCOMENTADA**, já que o simulador não necessita de circuitos adicionais, e o LED pode ser utilizado de forma segura para testes.
      - Após compilar o código, basta executar o arquivo `diagram.json` no simulador Wokwi para testar o comportamento do código.
+# Resultados
+Ao executarmos o código no LED, podemos perceber que, ao aumentarmos o duty cycle, aumentamos a tensão média no pino do LED, consequentemente aumentando a intensidade do seu brilho.
